@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <title>Lottery Pool</title>
+</head>
+
+<body>
+
+
+
+
+
+  <label>Odds of winning with 1 ticket: 1 in <input id='odds-of-one' type="text" name="" value=""></label>
+  <br />
+  <br />
+  <label>How many tickets did you buy? <input id='num-tickets' type="text" name="" value=""></label>
+
+  <button type="button" name="button" onclick='calculate()'>Calculate multiple ticket odds!</button>
+  <br />
+  One in <div id='results'></div>
+</body>
+
+<script type="text/javascript">
+  calculate = () => {
+
+    oddsOfOne = $('#odds-of-one').val()
+    oddsOfOne = parseInt(oddsOfOne)
+    numTickets = $('#num-tickets').val()
+    numTickets = parseInt(numTickets)
+
+    prob = oddsOfOne / numTickets
+    $('#results').html(prob)
+  }
+</script>
+
+</html>
